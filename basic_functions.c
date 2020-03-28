@@ -10,6 +10,11 @@ int find_lcm(int , int);
 double find_si(float ,float, float);
 double find_ci(float , float ,float);
 double turn_fahrenheit_to_c(float);
+double turn_celsius_to_f(float);
+
+double turn_celsius_to_f(float c) {
+  return (c * 9 / 5) + 32;
+}
 
 double turn_fahrenheit_to_c(float f) {
   return (f - 32) * 5 / 9;
@@ -72,6 +77,7 @@ int main() {
   printf("Enter temperature in Fahrenheit to convert it into Celsius \n");
   scanf("%f", &temp);
   printf("Temperature %lf in Celsius after conversion from %f Fahrenheit \n" ,turn_fahrenheit_to_c(temp), temp);
+  printf("Temperature %lf in Fahrenheit after conversion from %f Celsius \n" ,turn_celsius_to_f(temp), temp);
   return 0;
 }
 
