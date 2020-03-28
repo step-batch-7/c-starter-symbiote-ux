@@ -11,6 +11,15 @@ double find_si(float ,float, float);
 double find_ci(float , float ,float);
 double turn_fahrenheit_to_c(float);
 double turn_celsius_to_f(float);
+float greatest_among_three(float, float, float);
+
+float greatest_among_three(float num1, float num2, float num3) {
+  while ( num1 < num2){
+    num1 = num2;
+    num2 = num3;
+    }
+    return num1;
+}
 
 double turn_celsius_to_f(float c) {
   return (c * 9 / 5) + 32;
@@ -78,6 +87,10 @@ int main() {
   scanf("%f", &temp);
   printf("Temperature %lf in Celsius after conversion from %f Fahrenheit \n" ,turn_fahrenheit_to_c(temp), temp);
   printf("Temperature %lf in Fahrenheit after conversion from %f Celsius \n" ,turn_celsius_to_f(temp), temp);
+  float a, b, c;
+  printf("Enter three numbers to find the Greatest number among them \n");
+  scanf("%f %f %f", &a ,&b, &c);
+  printf("Greatest number among %f, %f, %f is %f",a,b,c,greatest_among_three(a,b,c));
   return 0;
 }
 
