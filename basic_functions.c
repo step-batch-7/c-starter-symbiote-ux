@@ -12,6 +12,11 @@ double find_ci(float , float ,float);
 double turn_fahrenheit_to_c(float);
 double turn_celsius_to_f(float);
 float greatest_among_three(float, float, float);
+float find_average(float, float, float);
+
+float find_average(float num1, float num2, float num3) {
+  return (num1 + num2 + num3) / 3;
+}
 
 float greatest_among_three(float num1, float num2, float num3) {
   while ( num1 < num2){
@@ -90,7 +95,8 @@ int main() {
   float a, b, c;
   printf("Enter three numbers to find the Greatest number among them \n");
   scanf("%f %f %f", &a ,&b, &c);
-  printf("Greatest number among %f, %f, %f is %f",a,b,c,greatest_among_three(a,b,c));
+  printf("Greatest number among %f, %f, %f is %f \n",a,b,c,greatest_among_three(a,b,c));
+  printf("Average of %f, %f ,%f is %f \n", a,b,c, find_average(a,b,c));
   return 0;
 }
 
