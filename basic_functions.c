@@ -1,22 +1,22 @@
 #include<stdio.h>
 
-int is_even(int);
+char is_even(int);
+char is_odd(int);
+
+char is_odd(int num) {
+  return !is_even(num);
+}
+
+char is_even(int num) {
+  return num % 2==0;
+}
 
 int main() {
   int num;
   printf("Enter a number \n");
   scanf("%d",&num);
-  is_even(num);
+  printf("%s \n",is_even(num) ? "Even" : "Not Even");
+  printf("%s \n", is_odd(num) ? "Odd" : "Not Odd");
   return 0;
 }
 
-int is_even(int num) {
-  if(num % 2 == 0) {
-    printf("Is Even");
-    return 0;
-  }
-  else {
-    printf("Not Even");
-    return 1;
-  }
-}
