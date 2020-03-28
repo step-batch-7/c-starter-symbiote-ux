@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 
 char is_even(int);
 char is_odd(int);
@@ -7,6 +8,12 @@ int find_cube(int);
 int find_gcd(int , int);
 int find_lcm(int , int);
 double find_si(float ,float, float);
+double find_ci(float , float ,float);
+
+double find_ci(float sum, float rate, float time) {
+  return sum * (pow((1 + rate / 100), time));
+
+}
 
 double find_si(float sum, float rate, float time) {
   return (sum * rate * time) / 100;
@@ -54,7 +61,8 @@ int main() {
   float sum,rate,time;
   printf("Enter Principle, Rate of interest & Time to calculate Simple Interest \n");
   scanf("%f %f %f", &sum, &rate, &time);
-  printf("Simple Interest of sum rs %f on rate %f for time %f id %lf", sum, rate, time , find_si(sum, rate, time));
+  printf("Simple Interest of sum rs %f on rate %f for time %f id %lf \n", sum, rate, time , find_si(sum, rate, time));
+  printf("Compound Interest of sum rs %f on rate %f for time %f id %lf \n", sum, rate, time , find_ci(sum, rate, time));
   return 0;
 }
 
