@@ -1,44 +1,34 @@
 #include<stdio.h>
 
 int find_notes(int);
+int print_count(int ,int);
+
+int print_count(int money , int value) {
+  if( money > value) {
+    int count = money / value;
+    printf("%d X Rs %d \n",count,value);
+  }
+  return 0;
+}
 
 int find_notes(int money) {
-  if( money > 2000) {
-    int count = money / 2000;
-    printf("%d X Rs 2000 \n", count);
-  }
-  int next_value = money % 2000;
-  if(next_value > 500) {
-    int count = next_value / 500;
-    printf("%d X Rs 500 \n", count);
-  }
-  next_value = next_value % 500;
-  if(next_value > 200) {
-     int count = next_value / 200;
-     printf("%d X Rs 200 \n", count);
-  }
-  next_value = next_value % 200;
-  if(next_value > 100) {
-     int count = next_value / 100;
-      printf("%d X Rs 100 \n", count);
-  }
-  next_value = next_value % 100;
-  if(next_value > 50) {
-     int count = next_value / 50;
-     printf("%d X Rs 50 \n", count);
-  }
-  next_value = next_value % 50;
-  if(next_value > 10) {
-     int count = next_value / 10;
-     printf("%d X Rs 10 \n", count);
-  }
-  next_value = next_value % 10;
-  if(next_value > 5) {
-     int count = next_value / 5;
-     printf("%d X Rs 5 \n", count);
-  }
-  next_value = next_value % 5;
-  printf("%d X Rs 1 \n", next_value);
+  print_count(money, 2000);
+  int money_left = money % 2000;
+  print_count(money_left, 500);
+  money_left = money_left % 500;
+  print_count(money_left, 200);
+  money_left = money_left % 200;
+  print_count(money_left, 100);
+  money_left = money_left % 100;
+  print_count(money_left, 50);
+  money_left = money_left % 50;
+  print_count(money_left, 20);
+  money_left = money_left % 20;
+  print_count(money_left, 10);
+  money_left = money_left % 10;
+  print_count(money_left, 5);
+  money_left = money_left % 5;
+  print_count(money_left, 1);
   return 0;
 }
 
