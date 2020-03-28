@@ -8,8 +8,7 @@ int print_count(int money , int value) {
     int count = money / value;
     printf("%d X Rs %d \n",count,value);
   }
-  int money_left = money % value;
-  return money_left;
+  return money % value;
 }
 
 int find_notes(int money) {
