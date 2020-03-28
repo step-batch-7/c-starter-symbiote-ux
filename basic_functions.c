@@ -9,6 +9,11 @@ int find_gcd(int , int);
 int find_lcm(int , int);
 double find_si(float ,float, float);
 double find_ci(float , float ,float);
+double turn_fahrenheit_to_c(float);
+
+double turn_fahrenheit_to_c(float f) {
+  return (f - 32) * 5 / 9;
+}
 
 double find_ci(float sum, float rate, float time) {
   return sum * (pow((1 + rate / 100), time));
@@ -63,6 +68,10 @@ int main() {
   scanf("%f %f %f", &sum, &rate, &time);
   printf("Simple Interest of sum rs %f on rate %f for time %f id %lf \n", sum, rate, time , find_si(sum, rate, time));
   printf("Compound Interest of sum rs %f on rate %f for time %f id %lf \n", sum, rate, time , find_ci(sum, rate, time));
+  float temp;
+  printf("Enter temperature in Fahrenheit to convert it into Celsius \n");
+  scanf("%f", &temp);
+  printf("Temperature %lf in Celsius after conversion from %f Fahrenheit \n" ,turn_fahrenheit_to_c(temp), temp);
   return 0;
 }
 
