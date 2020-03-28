@@ -35,7 +35,7 @@ double turn_fahrenheit_to_c(float f) {
 }
 
 double find_ci(float sum, float rate, float time) {
-  return sum * (pow((1 + rate / 100), time));
+  return (sum * (pow((1 + rate / 100), time))) - sum;
 
 }
 
@@ -85,8 +85,8 @@ int main() {
   float sum,rate,time;
   printf("Enter Principle, Rate of interest & Time to calculate Simple Interest \n");
   scanf("%f %f %f", &sum, &rate, &time);
-  printf("Simple Interest of sum rs %f on rate %f for time %f id %lf \n", sum, rate, time , find_si(sum, rate, time));
-  printf("Compound Interest of sum rs %f on rate %f for time %f id %lf \n", sum, rate, time , find_ci(sum, rate, time));
+  printf("Simple Interest of sum rs %f on rate %f for time %f is %lf \n", sum, rate, time , find_si(sum, rate, time));
+  printf("Compound Interest of sum rs %f on rate %f for time %f is %lf \n", sum, rate, time , find_ci(sum, rate, time));
   float temp;
   printf("Enter temperature in Fahrenheit to convert it into Celsius \n");
   scanf("%f", &temp);
