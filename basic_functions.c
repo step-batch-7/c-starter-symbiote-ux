@@ -6,6 +6,11 @@ int find_sqr(int);
 int find_cube(int);
 int find_gcd(int , int);
 int find_lcm(int , int);
+double find_si(float ,float, float);
+
+double find_si(float sum, float rate, float time) {
+  return (sum * rate * time) / 100;
+}
 
 int find_lcm(int num1, int num2) {
   return (num1 * num2) / find_gcd(num1, num2);
@@ -46,6 +51,10 @@ int main() {
   scanf("%d %d",&num1, &num2);
   printf("Greatest common divisor of %d and %d is %d \n",num1, num2, find_gcd(num1,num2));
   printf("Least common multiple of %d and %d is %d \n", num1 , num2, find_lcm(num1, num2));
+  float sum,rate,time;
+  printf("Enter Principle, Rate of interest & Time to calculate Simple Interest \n");
+  scanf("%f %f %f", &sum, &rate, &time);
+  printf("Simple Interest of sum rs %f on rate %f for time %f id %lf", sum, rate, time , find_si(sum, rate, time));
   return 0;
 }
 
