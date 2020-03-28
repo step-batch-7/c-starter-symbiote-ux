@@ -5,6 +5,11 @@ char is_odd(int);
 int find_sqr(int);
 int find_cube(int);
 int find_gcd(int , int);
+int find_lcm(int , int);
+
+int find_lcm(int num1, int num2) {
+  return (num1 * num2) / find_gcd(num1, num2);
+}
 
 int find_gcd(int num1, int num2) {
   if(!num1) return num2;
@@ -39,7 +44,8 @@ int main() {
   int num1 ,num2;
   printf("Enter two numbers\n");
   scanf("%d %d",&num1, &num2);
-  printf("Greatest common divisor of %d and %d is %d",num1, num2, find_gcd(num1,num2));
+  printf("Greatest common divisor of %d and %d is %d \n",num1, num2, find_gcd(num1,num2));
+  printf("Least common multiple of %d and %d is %d \n", num1 , num2, find_lcm(num1, num2));
   return 0;
 }
 
