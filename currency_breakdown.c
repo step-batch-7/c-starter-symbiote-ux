@@ -4,30 +4,23 @@ int find_notes(int);
 int print_count(int ,int);
 
 int print_count(int money , int value) {
-  if( money > value) {
+  if( money >= value) {
     int count = money / value;
     printf("%d X Rs %d \n",count,value);
   }
-  return 0;
+  int money_left = money % value;
+  return money_left;
 }
 
 int find_notes(int money) {
-  print_count(money, 2000);
-  int money_left = money % 2000;
-  print_count(money_left, 500);
-  money_left = money_left % 500;
-  print_count(money_left, 200);
-  money_left = money_left % 200;
-  print_count(money_left, 100);
-  money_left = money_left % 100;
-  print_count(money_left, 50);
-  money_left = money_left % 50;
-  print_count(money_left, 20);
-  money_left = money_left % 20;
-  print_count(money_left, 10);
-  money_left = money_left % 10;
-  print_count(money_left, 5);
-  money_left = money_left % 5;
+  int money_left = print_count(money, 2000);
+  money_left = print_count(money_left, 500);
+  money_left = print_count(money_left, 200);
+  money_left = print_count(money_left, 100);
+  money_left = print_count(money_left, 50);
+  money_left = print_count(money_left, 20);
+  money_left = print_count(money_left, 10);
+  money_left = print_count(money_left, 5);
   print_count(money_left, 1);
   return 0;
 }
