@@ -4,6 +4,15 @@ int find_factorial(int);
 int print_fibonacci(int);
 int print_odd_series(int);
 int print_even_series(int);
+int print_mul_table(int, int);
+
+int print_mul_table(int num, int terms) {
+  int count = 1;
+  while(count <= terms) {
+    printf("%d X %d = %d \n",num,count, num * count);
+    count++;
+  }
+}
 
 int print_even_series(int limit) {
   int start = 2;
@@ -59,5 +68,9 @@ int main() {
   scanf("%d", &limit);
   printf("Odd series upto %d from 1 is :\n",limit);
   print_even_series(limit);
+  printf("Enter a number and no of terms for which you want to print multiplication table \n");
+  scanf("%d %d",&num,&limit);
+  printf("Multiplication table for %d upto %d terms is : \n",num,limit);
+  print_mul_table(num,limit);
   return 0;
 }
