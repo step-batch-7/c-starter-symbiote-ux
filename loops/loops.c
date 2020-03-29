@@ -6,9 +6,19 @@ int print_odd_series(int);
 int print_even_series(int);
 int print_mul_table(int, int);
 int sum_of_n_num(int);
+int product_of_n_num(int);
+
+int product_of_n_num(int terms) {
+  int index,num,product = 1;
+  for(index = 0; index < terms; index++) {
+    scanf("%d",&num);
+    product *= num;
+  }
+  return product;
+}
 
 int sum_of_n_num(int terms) {
-  int index, sum = 0,num;
+  int index,num,sum = 0;
   for(index = 0; index < terms; index++) {
     scanf("%d",&num);
     sum += num;
@@ -85,9 +95,11 @@ int main() {
   scanf("%d %d",&num,&limit);
   printf("Multiplication table for %d upto %d terms is : \n",num,limit);
   print_mul_table(num,limit);
-  int terms;
   printf("Enter numbers of terms you want to add \n");
-  scanf("%d",&terms);
+  scanf("%d",&num);
   printf("Sum = %d \n",sum_of_n_num(num));
+  printf("Enter numbers of terms you want product of them \n");
+  scanf("%d",&num);
+  printf("Product = %d \n",product_of_n_num(num));
   return 0;
 }
