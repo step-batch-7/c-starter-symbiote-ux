@@ -12,16 +12,17 @@ int print_nth_num_range(int,int,int);
 int sum_of_even_num_range(int, int);
 
 int sum_of_even_num_range(int from, int upto) {
-  int start = from, sum = 0;
+  int start, sum = 0;
+  start = from % 2 ? from + 1 : from;
   while(start <= upto) {
-    if(start % 2==0) sum += start;
-    start +=1;
+    sum += start;
+    start +=2;
   }
   return sum;
 }
 
 int print_nth_num_range(int from,int upto, int nth_num) {
-  int start = from + nth_num;
+  int start = from;
   while(start <= upto) {
     printf("%d \n",start);
     start += nth_num;
@@ -30,12 +31,8 @@ int print_nth_num_range(int from,int upto, int nth_num) {
 }
 
 int print_odd_num_range(int from , int upto) {
-  int start = from;
-  while(start <= upto) {
-    if(start % 2) printf("%d \n",start);
-    start +=1;
-  }
-  return 0;
+  int start = from % 2 ? from : from + 1;
+  return print_nth_num_range(start,upto,2);
 }
 
 int product_of_n_num(int terms) {
@@ -66,16 +63,11 @@ int print_mul_table(int num, int terms) {
 }
 
 int print_even_series(int limit) {
-  int start = 2;
-  while(start <= limit) {
-    printf("%d \n",start);
-    start +=2;
-  }
-  return 0;
+  return print_nth_num_range(2,limit,2); 
 }
 
 int print_odd_series(int limit) {
-  return print_odd_num_range(1,limit);
+ return print_nth_num_range(1,limit,2); 
 }
 
 int print_fibonacci(int num) {
@@ -114,7 +106,7 @@ int main() {
   print_odd_series(limit);
   printf("Enter a number upto which you want to print all Even numbers from 1 \n");
   scanf("%d", &limit);
-  printf("Odd series upto %d from 1 is :\n",limit);
+  printf("Even series upto %d from 1 is :\n",limit);
   print_even_series(limit);
   printf("Enter a number and no of terms for which you want to print multiplication table \n");
   scanf("%d %d",&num,&limit);
