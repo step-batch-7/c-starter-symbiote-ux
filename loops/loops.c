@@ -3,10 +3,19 @@
 int find_factorial(int);
 int print_fibonacci(int);
 int print_odd_series(int);
+int print_even_series(int);
 
-int print_odd_series(int num) {
+int print_even_series(int limit) {
+  int start = 2;
+  while(start <= limit) {
+    printf("%d \n",start);
+    start +=2;
+  }
+}
+
+int print_odd_series(int limit) {
   int start = 1;
-  while(start <= num) {
+  while(start <= limit) {
     printf("%d \n",start);
     start += 2;
   }
@@ -46,5 +55,9 @@ int main() {
   scanf("%d", &limit);
   printf("Odd series upto %d from 1 is :\n",limit);
   print_odd_series(limit);
+  printf("Enter a number upto which you want to print all Even numbers from 1 \n");
+  scanf("%d", &limit);
+  printf("Odd series upto %d from 1 is :\n",limit);
+  print_even_series(limit);
   return 0;
 }
