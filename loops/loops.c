@@ -8,6 +8,16 @@ int print_mul_table(int,int);
 int sum_of_n_num(int);
 int product_of_n_num(int);
 int print_odd_num_range(int,int);
+int print_nth_num_range(int,int,int);
+
+int print_nth_num_range(int from,int upto, int nth_num) {
+  int start = from + nth_num;
+  while(start <= upto) {
+    printf("%d \n",start);
+    start += nth_num;
+  }
+  return 0;
+}
 
 int print_odd_num_range(int from , int upto) {
   int start = from;
@@ -111,5 +121,9 @@ int main() {
   scanf("%d %d",&from,&upto);
   printf("Odd numbers from %d upto %d are : \n");
   print_odd_num_range(from,upto);
+  printf("Enter from where and upto and which nth number you want to print \n");
+  scanf("%d %d %d", &from,&upto,&num);
+  printf("Number series from %d to %d every %d th number \n", from, upto,num);
+  print_nth_num_range(from,upto,num);
   return 0;
 }
