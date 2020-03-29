@@ -9,6 +9,16 @@ int sum_of_n_num(int);
 int product_of_n_num(int);
 int print_odd_num_range(int,int);
 int print_nth_num_range(int,int,int);
+int sum_of_even_num_range(int, int);
+
+int sum_of_even_num_range(int from, int upto) {
+  int start = from, sum = 0;
+  while(start <= upto) {
+    if(start % 2==0) sum += start;
+    start +=1;
+  }
+  return sum;
+}
 
 int print_nth_num_range(int from,int upto, int nth_num) {
   int start = from + nth_num;
@@ -125,5 +135,8 @@ int main() {
   scanf("%d %d %d", &from,&upto,&num);
   printf("Number series from %d to %d every %d th number \n", from, upto,num);
   print_nth_num_range(from,upto,num);
+  printf("Enter from where and upto which number you want the sum of even numbers \n");
+  scanf("%d %d",&from, &upto);
+  printf("Sum of Even number series from %d upto %d is %d",from,upto,sum_of_even_num_range(from,upto));
   return 0;
 }
