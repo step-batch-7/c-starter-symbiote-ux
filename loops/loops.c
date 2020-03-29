@@ -2,6 +2,15 @@
 
 int find_factorial(int);
 int print_fibonacci(int);
+int print_odd_series(int);
+
+int print_odd_series(int num) {
+  int start = 1;
+  while(start <= num) {
+    printf("%d \n",start);
+    start += 2;
+  }
+}
 
 int print_fibonacci(int num) {
   int prev_term = -1;
@@ -32,5 +41,10 @@ int main() {
   scanf("%d",&count);
   printf("Fibonacci series upto %d terms is : \n",count);
   print_fibonacci(count);
+  int limit;
+  printf("Enter a number upto which you want to print all odd numbers from 1 \n");
+  scanf("%d", &limit);
+  printf("Odd series upto %d from 1 is :\n",limit);
+  print_odd_series(limit);
   return 0;
 }
