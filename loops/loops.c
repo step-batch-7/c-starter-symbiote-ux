@@ -5,6 +5,16 @@ int print_fibonacci(int);
 int print_odd_series(int);
 int print_even_series(int);
 int print_mul_table(int, int);
+int sum_of_n_num(int);
+
+int sum_of_n_num(int terms) {
+  int index, sum = 0,num;
+  for(index = 0; index < terms; index++) {
+    scanf("%d",&num);
+    sum += num;
+  }
+  return sum;
+}
 
 int print_mul_table(int num, int terms) {
   int count = 1;
@@ -12,6 +22,7 @@ int print_mul_table(int num, int terms) {
     printf("%d X %d = %d \n",num,count, num * count);
     count++;
   }
+  return 0;
 }
 
 int print_even_series(int limit) {
@@ -20,6 +31,7 @@ int print_even_series(int limit) {
     printf("%d \n",start);
     start +=2;
   }
+  return 0;
 }
 
 int print_odd_series(int limit) {
@@ -28,6 +40,7 @@ int print_odd_series(int limit) {
     printf("%d \n",start);
     start += 2;
   }
+  return 0;
 }
 
 int print_fibonacci(int num) {
@@ -72,5 +85,9 @@ int main() {
   scanf("%d %d",&num,&limit);
   printf("Multiplication table for %d upto %d terms is : \n",num,limit);
   print_mul_table(num,limit);
+  int terms;
+  printf("Enter numbers of terms you want to add \n");
+  scanf("%d",&terms);
+  printf("Sum = %d \n",sum_of_n_num(num));
   return 0;
 }
