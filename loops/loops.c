@@ -4,9 +4,19 @@ int find_factorial(int);
 int print_fibonacci(int);
 int print_odd_series(int);
 int print_even_series(int);
-int print_mul_table(int, int);
+int print_mul_table(int,int);
 int sum_of_n_num(int);
 int product_of_n_num(int);
+int print_odd_num_range(int,int);
+
+int print_odd_num_range(int from , int upto) {
+  int start = from;
+  while(start <= upto) {
+    if(start % 2) printf("%d \n",start);
+    start +=1;
+  }
+  return 0;
+}
 
 int product_of_n_num(int terms) {
   int index,num,product = 1;
@@ -45,12 +55,7 @@ int print_even_series(int limit) {
 }
 
 int print_odd_series(int limit) {
-  int start = 1;
-  while(start <= limit) {
-    printf("%d \n",start);
-    start += 2;
-  }
-  return 0;
+  return print_odd_num_range(1,limit);
 }
 
 int print_fibonacci(int num) {
@@ -101,5 +106,10 @@ int main() {
   printf("Enter numbers of terms you want product of them \n");
   scanf("%d",&num);
   printf("Product = %d \n",product_of_n_num(num));
+  int from, upto;
+  printf("Enter from where and upto which number you want to print odd numbers \n");
+  scanf("%d %d",&from,&upto);
+  printf("Odd numbers from %d upto %d are : \n");
+  print_odd_num_range(from,upto);
   return 0;
 }
