@@ -3,9 +3,9 @@
 
 typedef struct {
   int *list;
-  int length;
+  unsigned int length;
 } Dynamic_Array;
 
-Dynamic_Array * filter_even(int *, unsigned);
+Dynamic_Array * filter_even(Dynamic_Array *);
 
 #endif

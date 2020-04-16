@@ -1,14 +1,14 @@
 #include<stdlib.h>
 #include "even_filter.h"
 
-Dynamic_Array * filter_even(int *numbers, unsigned length) {
-  int list[length];
+Dynamic_Array * filter_even(Dynamic_Array *all_num) {
+  int list[all_num->length];
   Dynamic_Array * even_num = malloc(sizeof(Dynamic_Array));
   even_num->list = NULL;
   even_num->length = 0;
-  for(int i = 0; i < length; i++) {
-    if(!(numbers[i] % 2)) {
-      list[even_num->length] = numbers[i];
+  for(int i = 0; i < all_num->length; i++) {
+    if(!(all_num->list[i] % 2)) {
+      list[even_num->length] = all_num->list[i];
       even_num->length++;
     }
   }

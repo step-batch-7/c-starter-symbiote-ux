@@ -3,18 +3,23 @@
 #include "even_filter.h"
 
 int main() {
-  int *numbers;
-  unsigned no_of_terms;
+  Dynamic_Array * all_num = malloc(sizeof(Dynamic_Array));
+
   printf("Enter no of terms\n");
-  scanf("%d",&no_of_terms);
-  numbers = malloc(sizeof(int) * no_of_terms);
-  for(int i = 0; i < no_of_terms; i++) {
-    scanf("%d",&numbers[i]);
+  scanf("%d",&all_num->length);
+
+  all_num->list = malloc(sizeof(int) * all_num->length);
+
+  for(int i = 0; i < all_num->length; i++) {
+    scanf("%d",&all_num->list[i]);
   }
-  Dynamic_Array * even_num = filter_even(numbers, no_of_terms);
+
+  Dynamic_Array * even_num = filter_even(all_num);
   printf("Even No :\n");
   for(int i = 0; i < even_num->length; i++) {
     printf("%d \n",even_num->list[i]);
   }
+  free(even_num);
+  free(all_num);
   return 0;
 }
