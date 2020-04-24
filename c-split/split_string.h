@@ -1,8 +1,6 @@
 #ifndef _SPLIT_STRING_H_
 #define _SPLIT_STRING_H_
 
-#define SPLITTED_STRING splitted_string->outer_array[i]
-#define RESULTED_STRING result->outer_array[turn]
 typedef struct {
   char *array;
   unsigned int length;
