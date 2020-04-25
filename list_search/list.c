@@ -2,28 +2,6 @@
 #include<stdio.h>
 #include "list.h"
 
-void search_number(List *list) {
-  int value;
-  printf("What number would you like to search for ? \n");
-  scanf("%d",&value);
-  while(value != -99) {
-    search_num_pos(list,value) == -99 ? Print_Num_Absent : Print_Num_Present ;
-    printf("What number would you like to search for ? \n");
-    scanf("%d",&value); 
-  }
-};
-
-void save_numbers(List *list) {
-  int value;
-  printf("Enter a number\n");
-  scanf("%d",&value);
-  while(value != -99) {
-    insert_value(list,value);
-    printf("Enter a number\n");
-    scanf("%d",&value);
-  }
-};
-
 int search_num_pos(List *list, int num) {
   int count = 0;
   Node *p_walk = list->first;
@@ -32,7 +10,7 @@ int search_num_pos(List *list, int num) {
      count++;
      p_walk = p_walk->next;
    }
-   return -99;
+   return END;
 };
 
 void free_list(List *list) {
