@@ -2,8 +2,6 @@
 #define _LIST_H_
 
 #define END -99
-#define Print_Num_Present(value,index) printf("%d is present in the list at position %d \n\n",value,index)
-#define Print_Num_Absent(value) printf("%d is not present in the list\n\n", value)
 
 typedef struct node {
   int value;

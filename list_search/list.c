@@ -33,11 +33,10 @@ Node *create_node(int value) {
 
 void insert_value(List *list, int value) {
   Node *new_node = create_node(value);
-  if(list->first == NULL) {
-    list->first = new_node;
-  } else {
-    list->last->next = new_node;
-  }
+  if(list->first == NULL)
+  list->first = new_node;
+  else 
+  list->last->next = new_node;
   list->last = new_node;
 }
 
